@@ -1,0 +1,196 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7033,        186]
+NotebookOptionsPosition[      6615,        170]
+NotebookOutlinePosition[      6950,        185]
+CellTagsIndexPosition[      6907,        182]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"a_", ",", "k_", ",", "r_", ",", "n0_"}], "]"}], ":=", 
+  RowBox[{"First", "@", 
+   RowBox[{"NDSolve", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"y", "'"}], "[", "t", "]"}], "\[Equal]", 
+        RowBox[{"r", " ", 
+         RowBox[{"y", "[", "t", "]"}], " ", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            RowBox[{"y", "[", "t", "]"}], "/", "k"}]}], ")"}], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"y", "[", "t", "]"}], "/", "a"}], "-", "1"}], ")"}]}]}], 
+       ",", 
+       RowBox[{
+        RowBox[{"y", "[", "0", "]"}], "\[Equal]", "n0"}]}], "}"}], ",", 
+     RowBox[{"y", "[", "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "10"}], "}"}]}], "]"}]}]}], "\n", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Column", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"Evaluate", "[", 
+         RowBox[{
+          RowBox[{"y", "[", "t", "]"}], "/.", 
+          RowBox[{"f", "[", 
+           RowBox[{"a", ",", "1", ",", "rate", ",", "pop0"}], "]"}]}], "]"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "0", ",", "10"}], "}"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "1"}], "}"}]}], ",", 
+        RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+        RowBox[{"FrameLabel", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<time\>\"", ",", "\"\<population\>\""}], "}"}]}]}], 
+       "]"}], ",", 
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"rate", " ", "n", " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "n"}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"n", "/", "a"}], "-", "1"}], ")"}]}], ",", 
+          RowBox[{"rate", " ", "n", " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "n"}], ")"}]}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "0", ",", "1.1"}], "}"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "0.02"}], "/", "a"}], ",", 
+           RowBox[{"0.02", "/", "a"}]}], "}"}]}], ",", 
+        RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+        RowBox[{"FrameLabel", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<N\>\"", ",", "\"\<dN/dt\>\""}], "}"}]}], ",", 
+        RowBox[{"PlotLegends", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Allee effect\>\"", ",", "\"\<Logistic\>\""}], 
+          "}"}]}]}], "]"}]}], "}"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "0.05", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"pop0", ",", "0.2", ",", "0.5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"rate", ",", "0.1", ",", "0.3"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8210045689724817`*^9, 3.8210045707530117`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"0f06ecef-b649-4040-8b97-7dd27a8ca4cb"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`a$$ = 0.05, $CellContext`pop0$$ = 
+    0.2, $CellContext`rate$$ = 0.1, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`a$$], 0.05, 1}, {
+      Hold[$CellContext`pop0$$], 0.2, 0.5}, {
+      Hold[$CellContext`rate$$], 0.1, 0.3}}, Typeset`size$$ = {
+    296., {124.5, 131.5}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`a$2277$$ = 
+    0, $CellContext`pop0$2282$$ = 0, $CellContext`rate$2283$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`a$$ = 0.05, $CellContext`pop0$$ = 
+        0.2, $CellContext`rate$$ = 0.1}, "ControllerVariables" :> {
+        Hold[$CellContext`a$$, $CellContext`a$2277$$, 0], 
+        Hold[$CellContext`pop0$$, $CellContext`pop0$2282$$, 0], 
+        Hold[$CellContext`rate$$, $CellContext`rate$2283$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Column[{
+         Plot[
+          Evaluate[
+           ReplaceAll[
+            $CellContext`y[$CellContext`t], 
+            $CellContext`f[$CellContext`a$$, 
+             1, $CellContext`rate$$, $CellContext`pop0$$]]], {$CellContext`t, 
+           0, 10}, PlotRange -> {0, 1}, Frame -> True, 
+          FrameLabel -> {"time", "population"}], 
+         Plot[{$CellContext`rate$$ $CellContext`n (
+            1 - $CellContext`n) ($CellContext`n/$CellContext`a$$ - 
+            1), $CellContext`rate$$ $CellContext`n (
+            1 - $CellContext`n)}, {$CellContext`n, 0, 1.1}, 
+          PlotRange -> {(-0.02)/$CellContext`a$$, 0.02/$CellContext`a$$}, 
+          Frame -> True, FrameLabel -> {"N", "dN/dt"}, 
+          PlotLegends -> {"Allee effect", "Logistic"}]}], 
+      "Specifications" :> {{$CellContext`a$$, 0.05, 1}, {$CellContext`pop0$$, 
+         0.2, 0.5}, {$CellContext`rate$$, 0.1, 0.3}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{343., {194., 201.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.821004592025923*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"9ed0ef76-3d0e-43ae-bba7-dc8ac753e802"]
+}, Open  ]]
+},
+WindowSize->{808, 621},
+WindowMargins->{{Automatic, 278}, {19, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3150, 87, 216, "Input",ExpressionUUID->"0f06ecef-b649-4040-8b97-7dd27a8ca4cb"],
+Cell[3733, 111, 2866, 56, 447, "Output",ExpressionUUID->"9ed0ef76-3d0e-43ae-bba7-dc8ac753e802"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

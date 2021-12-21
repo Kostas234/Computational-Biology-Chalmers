@@ -1,0 +1,21 @@
+phases = np.zeros((N,T))
+
+# initialize with random numbers
+phases[:,0] = (np.pi/2)*(2*np.random.rand(N)-1)
+omegas = np.random.standard_cauchy(N)
+
+for t in range(1,T) :
+    for i in range(N) :
+        phases[i,t] = 0
+        for j in range(N) :
+            phases[i,t] += np.sin(phases[j,t-1]-phases[i,t-1])
+        phases[i,t] *= K/N
+        phases[i,t] += omegas[i]
+        phases[i,t] *= dt
+        phases[i,t] += phases[i,t-1]
+
+rs = np.zeros((T,1),dtype=complex)
+for t in range(T) :
+    for i in range(N) :
+        rs[t] += np.exp(complex(0,phases[i,t]))
+    rs[t] /= N
